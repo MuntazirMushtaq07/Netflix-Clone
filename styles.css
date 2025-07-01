@@ -1,0 +1,408 @@
+/* Global Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: red;
+}
+
+h2 {
+  margin-left: 20px;
+  margin-top: 40px;
+  font-size: 1.5rem;
+}
+
+/* Horizontal Movie Scroll Rows */
+.movie-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scroll-behavior: smooth;
+  gap: 15px;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Movie Cards */
+.movie-card {
+  flex: 0 0 auto;
+  width: 150px;
+  background-color: #111;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.movie-card h4 {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Search Section */
+#searchInput, #searchBtn {
+  padding: 10px;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+#searchInput {
+  width: 300px;
+  border: none;
+}
+
+#searchBtn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#searchResults {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Movie Details Page */
+.movie-details-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 15px red;
+}
+
+.movie-details-container img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.movie-details-container h2 {
+  color: #f44336;
+  margin-top: 0;
+}
+
+.movie-details-container p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.movie-details-container a {
+  color: #00bcd4;
+  word-break: break-all;
+}
+
+/* Cast Section */
+.movie-details-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.movie-details-container li {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  gap: 12px;
+}
+
+.movie-details-container li img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Search Results Page Enhancement */
+.search-page {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.search-header {
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.search-header h1 {
+  color: red;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+#searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.page-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.page-btn:hover {
+  background: red;
+  transform: scale(1.05);
+}
+
+.page-btn.active {
+  background: #ff1f1f;
+  font-weight: bold;
+  border-color: #ff4c4c;
+}
+/* ============================
+🔥 SEARCH PAGE GRID LAYOUT
+============================ */
+#searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* 🔍 Search Card Styling */
+.search-card {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.search-card:hover {
+  transform: scale(1.05);
+}
+
+.search-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #333;
+}
+
+.search-card h4 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* 🚀 Sticky Top Bar */
+.search-topbar {
+  background-color: #111;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+}
+
+.search-topbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: red;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  width: 240px;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Pagination Buttons */
+.pagination {
+  text-align: center;
+  padding: 20px;
+}
+
+.pagination button {
+  background-color: #222;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:hover {
+  background-color: red;
+}
+.search-topbar {
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+}
+
+.search-topbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  width: 300px;
+}
+
+.search-box button {
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-page {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.search-card {
+  width: 180px;
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.search-card:hover {
+  transform: scale(1.05);
+}
+
+.search-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-bottom: 2px solid red;
+}
+
+.search-card h4 {
+  padding: 10px;
+  font-size: 14px;
+}
